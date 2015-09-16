@@ -48,4 +48,16 @@ public final class GlobalParams {
 		return webDriver;
 	}
 	
+	public static void loginCentralAdmin(WebDriver webdriver){
+		webdriver.get(migDc1AdminUI);
+		loginSSO(webdriver);
+		try {
+			webdriver.wait(5*1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println("未加载central Admin 页面");
+			e.printStackTrace();
+		}
+	}
+	
 }
